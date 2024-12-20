@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year</title>
+    <style>
+        body {
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            animation: flashBackground 3s infinite;
+        }
+        h1, h2 {
+            color: gold;
+        }
+        #rotating-image {
+            margin: 20px auto;
+            animation: rotate 5s linear infinite;
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes flashBackground {
+            0% { background-color: #FF0000; } /* red */
+            25% { background-color: #00FF00; }
+            50% { background-color: #0000FF; }
+            75% { background-color: #FFFF00; }
+            100% { background-color: #FF00FF; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎆 Happy New Year Ebriwan 🎆</h1>
+    <img id="rotating-image" src="your-image.jpg" alt="Rotating Person" width="500">
+    <h2>🎉🎉✨ Happy New Year Ebriwan 🎉🎉✨</h2>
+</body>
+</html>
