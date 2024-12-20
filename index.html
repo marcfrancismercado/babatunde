@@ -9,7 +9,9 @@
             text-align: center;
             color: white;
             font-family: Arial, sans-serif;
+            overflow: hidden;
             animation: flashBackground 3s infinite;
+            margin: 0;
         }
         h1, h2 {
             color: gold;
@@ -17,6 +19,13 @@
         #rotating-image {
             margin: 20px auto;
             animation: rotate 5s linear infinite;
+        }
+        .floating {
+            position: absolute;
+            width: 100px;
+            height: auto;
+            z-index: 10;
+            transition: transform 1.5s ease, top 1.5s ease, left 1.5s ease;
         }
         @keyframes rotate {
             from {
@@ -39,5 +48,46 @@
     <h1>🎉🎉✨ Happy New Year Ebriwan 🎉🎉✨</h1>
     <img id="rotating-image" src="your-image.jpg" alt="Rotating Person" width="500">
     <h2>🎉🎉✨ Happy New Year Ebriwan 🎉🎉✨</h2>
+
+    <!--three separate GIF floating-->
+    <img class="floating" src="hanni-newjeans.gif" alt="3 GIF 1" id="gif1">
+    <img class="floating" src="fat-guy.gif" alt="3 GIF 2" id="gif2">
+    <img class="floating" src="skeleton-meme.gif" alt="3 GIF 2" id="gif3">
+
+    <script>
+        // javascript for floating GIFs
+        const gifs = [
+            document.getElementById('gif1'),
+            document.getElementById('gif2'),
+            document.getElementById('gif3'),
+        ];
+
+        function randomPosition(element) {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            const x = Math.random() * (screenWidth - 100);
+            const y = Math.random() * (screenHeight - 100);
+
+            //smoothly update the transistion
+
+            element.style.left = x + 'px';
+            element.style.top = y + 'px';
+        }
+
+        function moveGifs() {
+            gifs.forEach(gif => {
+                randomPosition(gif);
+            });
+        }
+        // set initial positions
+        gifs.forEach(gif => {
+            gif.style.position = 'absolute';
+            randomPosition(gif);
+        });
+
+        //move GIFs every 2 seconds
+        setInterval(moveGifs, 2000);
+    </script>
 </body>
 </html>
