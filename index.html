@@ -27,6 +27,24 @@
             z-index: 10;
             transition: transform 1.5s ease, top 1.5s ease, left 1.5s ease;
         }
+        .center-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: gold;
+            color: black;
+            font-size: 24px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 20;
+        }
+        .center-button:hover{
+            background-color: darkorange;
+        }
         @keyframes rotate {
             from {
                 transform: rotate(0deg);
@@ -53,6 +71,13 @@
     <img class="floating" src="hanni-newjeans.gif" alt="3 GIF 1" id="gif1">
     <img class="floating" src="fat-guy.gif" alt="3 GIF 2" id="gif2">
     <img class="floating" src="skeleton-meme.gif" alt="3 GIF 2" id="gif3">
+
+    <!--audio clip-->
+    <audio id="background-audio" loop>
+        <source src="happynewyear.mp3" type="audio/mpeg">
+        your browser does not support the audio element.
+    </audio>
+    <button class="center-button" onclick="document.getElementById('background-audio').play()">Click Me... gently💦💦</button>
 
     <script>
         // javascript for floating GIFs
